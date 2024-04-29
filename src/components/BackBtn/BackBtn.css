@@ -1,0 +1,17 @@
+.BackBtn{
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  flex-direction: row;
+  padding: 0.5em;
+  z-index: 3;
+}
+
+.BackBtn a {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  text-decoration: none;
+  color: #f4fbff;
+  font-size: medium;
+}

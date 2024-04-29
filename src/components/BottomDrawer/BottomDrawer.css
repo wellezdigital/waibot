@@ -1,0 +1,124 @@
+.BottomDrawerContainer {
+    position: fixed;
+    height: 65vh;
+    top: 35vh;
+    left: 0;
+    right: 0;
+    padding: 2vh;
+    padding-bottom: 5vh;
+    text-align: center;
+    border-radius: 25px 25px 0 0;
+    background-color: #F5F5F5;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+.BottomDrawerContainer .close-btn {
+    position: relative;
+    left: 42vw;
+    color: black;
+    font-size: larger;
+    margin-bottom: -2vh;
+}
+
+.BottomDrawerContainer.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.BottomDrawerContent * {
+    color: black !important;
+}
+
+.BottomDrawerContainer img {
+    width: 15vw;
+    height: 15vw;
+}
+
+.BottomDrawer-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 2vh;
+}
+
+.BottomDrawer-des {
+    margin-top: 2vh;
+    font-family: 'HelveticaNowDisplayLight', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.old-level {
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+    align-items: center;
+    padding: 2vw;
+    border: 1px solid #B6B6B666;
+    border-radius: 16px;
+
+}
+
+.old-level div {
+    text-align: left;
+}
+
+.new-level {
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+    align-items: center;
+    padding: 2vw;
+    border: 1px solid #36EF82;
+    border-radius: 16px;
+    background: linear-gradient(180deg, rgba(54, 239, 130, 0.2) 0%, rgba(143, 255, 189, 0.2) 100%);
+}
+
+.new-level div {
+    text-align: left;
+}
+
+.new-level div:first-child,
+.old-level div:first-child {
+    font-family: 'HelveticaNowDisplayLight', sans-serif;
+}
+
+.new-level div:last-child,
+.old-level div:last-child {
+    font-family: 'HelveticaNowDisplayMedium', sans-serif;
+}
+
+.UpgradeBtn {
+    margin-top: 4vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.UpgradeBtn button,
+.UpgradeBtn div {
+    padding: 4vw;
+    border: 1px solid #36EF82;
+    border-radius: 25px;
+    font-size: 18px;
+}
+
+.UpgradeBtn button {
+    width: 60vw;
+    background-color: #36EF82;
+}
+
+.UpgradeBtn div {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+}
+
+.UpgradeBtn div img {
+    width: 5vw;
+    height: 5vw;
+}

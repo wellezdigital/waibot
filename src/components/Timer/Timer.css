@@ -1,0 +1,10 @@
+.Timer {
+  position: relative;
+  z-index: 5;
+  font-size: large;
+}
+
+.Timer * {
+  position: absolute;
+  top: 50vh;
+}

@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wdth@0,112.5;1,112.5&display=swap');
+@import "@flaticon/flaticon-uicons/css/all/all";
+
+/* @font-face {
+  font-family: 'Archivo'; 
+  src: url('../../assets/fonts/Archivo Expanded.ttf') format('truetype');
+} */
+@font-face {
+  font-family: 'HelveticaNowDisplayLight'; 
+  /* src: url('../../assets/fonts/HelveticaNowDisplay-Light.ttf') format('truetype'); */
+  src: url('../../assets/fonts/HelveticaNowDisplay-Light.woff') format('woff');
+}
+@font-face {
+  font-family: 'HelveticaNowDisplayMedium'; 
+  /* src: url('../../assets/fonts/HelveticaNowDisplay-Medium.ttf') format('truetype'); */
+  src: url('../../assets/fonts/HelveticaNowDisplay-Medium.woff') format('woff');
+}
+
+html,
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+* {
+  font-family: "Archivo", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: #f4fbff;
+}
+
+body {
+  background: #000000;
+  background: linear-gradient(45deg, #000000, #000000);
+  height: 100vh;
+}
+
+.moon {
+	position: absolute;
+	width: 100vw; 
+	left: 50%; 
+	bottom: -15vh;
+	transform: translateX(-50%) ;
+}
+
+.layout {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+
+  margin: 0;
+  gap: 15px;
+  color: white;
+}
+
+
+.forBtn {
+  padding-top: 30vh;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  /* background: linear-gradient(to bottom, hotpink 0%, tomato 100%); */
+  /* background: linear-gradient(30deg, rgb(66, 98, 242) 0%, rgb(71, 249, 255) 100%); */
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+    linear-gradient(180deg, rgba(54, 239, 130, 0.2) 0%, rgba(31, 137, 75, 0.2) 100%);
+  backdrop-filter: blur(15px);
+
+  box-shadow: 0 4px 4px rgba(0, 0, 0, .3);
+  border: 1px solid #36EF82;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 17.41px;
+
+  z-index: 2;
+  font-size: larger;
+}
+
+.btn::before {
+  display: block;
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: black;
+  opacity: 0;
+  content: '';
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+    opacity: .4;
+  }
+
+  to {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+
+
+
+.hidden {
+  display: none;
+}
