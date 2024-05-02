@@ -20,13 +20,21 @@ export const Footer = () => {
               <div>🤝</div>
               <span>Ref</span>
             </Link>
+            <Link to='https://arcoin.net/?u=onwkN9aek8tHNC8O' className="menu-el">
+              <div>🎒</div>
+              <span>Outdoor</span>
+            </Link>
+            <Link to='/' className="menu-el">
+              <div>🔜</div>
+              <span>Wallet</span>
+            </Link>
           </div>
-          <div className="menu">
+          {/* <div className="menu">
             <div className="menu-el">
               <div>⚡️</div>
               <span>Launch</span>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

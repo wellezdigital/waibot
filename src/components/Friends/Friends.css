@@ -59,18 +59,26 @@
   height: 5vw;
 }
 
-.invF {
+.botoom-btns {
   position: absolute;
-  top: 91vh;
-  width: 90vw;
-  left: 50%;
-  transform: translateX(-50%);
-
+  top: 92vh;
+  width: 100%;
+  padding: 0 5vw;
+  
+  display: flex;
+  justify-content: space-between;
+  
+}
+.botoom-btns button {
+  width: 42vw;
   padding: 4vw;
-  border-radius: 25px;
-  font-size: 18px;
-  color: black;
-  background: #36EF82;
+  border: 1px solid rgba(0, 0, 0, 0);
+  box-shadow: rgba(255, 255, 255, .2) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  border-radius: 10px;
+  font-size: 13px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  background: #5353539e;
 }
 
 .emodji {

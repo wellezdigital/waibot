@@ -47,7 +47,7 @@ export const Boost = (props) => {
       BDrawer[key] = false;
     });
 
-    if (shadow)  setShadow(false);
+    if (shadow) setShadow(false);
     console.log('unShadow');
   }
 

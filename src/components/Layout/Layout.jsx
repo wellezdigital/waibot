@@ -23,6 +23,7 @@ export const Layout = (props) => {
   const div = document.createElement('div');
 
   div.dataset.u = 'jqEx3UxzlqbpApV3';
+  div.lang = 'en';
   div.dataset.user_id = user ? user.id : 123;
   div.dataset.amount = data ? data.avalible_coins - data.collected_coins : 100;
   div.dataset.coin = 'WAI';

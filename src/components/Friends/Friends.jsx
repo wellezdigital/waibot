@@ -1,34 +1,34 @@
 import { useState } from 'react';
 import { BackBtn } from '../BackBtn/BackBtn.jsx';
-import BottomDrawer from '../BottomDrawer/BottomDrawer.jsx';
+import { useTelegram } from '../../hooks/useTelegram';
 
 
 import './Friends.css';
 
 export const Friends = (props) => {
   const { data } = props;
+  const { tg } = useTelegram();
 
-  const [shadow, setShadow] = useState(false);
   const [buttonText, setButtonText] = useState('Copy referral link');
 
-  const close = () => {
-    setShadow(false)
-  }
-
   const copyRef = async () => {
-    console.log(data.ref_link);
-    // await navigator.clipboard.writeText(`https://t.me/knizkii_bot/moon?startapp=${data.ref_link}`);
     await navigator.clipboard.writeText(`https://t.me/wai_coin_bot/app?startapp=${data.ref_link}`);
-    
+
     setButtonText('Copied!');
     setTimeout(() => {
       setButtonText('Copy referral link');
     }, 3000);
   }
 
+  const shareRef = () => {
+    console.log('share');
+    console.log(tg);
+
+    tg.openTelegramLink(`t.me/wai_coin_bot/app?startapp=${data.ref_link}`)
+  }
+
   return (
     <div className="Friends">
-      <div className={shadow ? 'shadow' : ''} onClick={() => { shadow && setShadow(false) }}>
         <img className='second-bg' src="/second-bg.webp" alt="" />
         <BackBtn />
 
@@ -39,7 +39,7 @@ export const Friends = (props) => {
         </div>
 
         <div className="myfriends">
-        {data.friends && (<h1>My Friends</h1>)}
+          {data.friends && (<h1>My Friends</h1>)}
 
           {data.friends && (<ul>
             {data.friends.map((friend, index) => (
@@ -70,22 +70,10 @@ export const Friends = (props) => {
           )}
         </div>
 
-        <button className='invF' onClick={() => { setShadow(true) }}>Invite a Friend</button>
-      </div>
-
-      <BottomDrawer className="BottomDrawer" show={shadow} close={close}>
-        <div className='emodji'>🧑‍🚀</div>
-        <div className='BottomDrawer-title'>Friendship bonus</div>
-        <span className='BottomDrawer-des'>Friends amplify your power! Earn 20% KNIZ from all your friends' income - no limits, no boundaries. Let's go wild!</span>
-        <div>
-
-          <div className='UpgradeBtn'>
-            <button onClick={copyRef}>{buttonText}</button>
-          </div>
+        <div className='botoom-btns'>
+          <button onClick={copyRef}>{buttonText}</button>
+          <button onClick={shareRef}>Share referral link</button>
         </div>
-      </BottomDrawer>
-
-
     </div>
   );
 };

@@ -48,7 +48,7 @@ function App() {
     },
     {
       path: '/quests',
-      element: <Quests data={data} />,
+      element: <Quests data={data} tg={tg} />,
     },
     {
       path: '/boost',
