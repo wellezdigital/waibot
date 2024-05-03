@@ -28,9 +28,6 @@ export const Layout = (props) => {
   div.dataset.amount = data ? data.avalible_coins - data.collected_coins : 100;
   div.dataset.coin = 'WAI';
   
-  // div.dataset.user_tg_id = user ? user.id : 123;
-  // div.dataset.available_coins = data ? data.avalible_coins - data.collected_coins : 100;
-
   const script = document.createElement('script');
   script.src = 'https://web-ar-qr.com/client/loader.js';
   div.appendChild(script);
@@ -38,7 +35,7 @@ export const Layout = (props) => {
 
 
 
-  const handleButtonClick = () => {
+  const mountAR = () => {
     // axios.post(`${api}/game_end`, {
     //   user_tg_id: user ? user.id : 123,
     //   coin: 100
@@ -61,7 +58,7 @@ export const Layout = (props) => {
 
       <div className="forBtn">
         {/* disabled={!ready} */}
-        <button onClick={handleButtonClick} className="btn">Start</button>
+        <button onClick={mountAR} className="btn">Start</button>
         {data && <Timer data={data} handleReady={handleReady} />}
       </div>
 

@@ -3,6 +3,23 @@ import './Footer.css';
 
 export const Footer = () => {
 
+  const div = document.createElement('div');
+
+  div.dataset.u = 'onwkN9aek8tHNC8O';
+  div.lang = 'en';
+  // div.dataset.user_id = user ? user.id : 123;
+  // div.dataset.amount = data ? data.avalible_coins - data.collected_coins : 100;
+  div.dataset.coin = 'WAI';
+  
+  const script = document.createElement('script');
+  script.src = 'https://web-ar-qr.com/client/loader.js';
+  div.appendChild(script);
+  
+
+  const mountAR_outdoor = () => {
+    document.body.appendChild(div);
+  }
+
   return (
     <div>
       <div className="footer">
@@ -20,7 +37,7 @@ export const Footer = () => {
               <div>🤝</div>
               <span>Ref</span>
             </Link>
-            <Link to='https://arcoin.net/?u=onwkN9aek8tHNC8O' className="menu-el">
+            <Link onClick={ mountAR_outdoor } className="menu-el">
               <div>🎒</div>
               <span>Outdoor</span>
             </Link>

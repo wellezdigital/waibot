@@ -42,6 +42,7 @@ export const Quests = (props) => {
 
   const subscribe = async (title) => {
     if (title === 'twitter') tg.openLink('https://twitter.com/wellezdigital');
+    if (title === 'web') tg.openLink('https://wellez.digital');
 
     unShadow();
 
@@ -125,6 +126,23 @@ export const Quests = (props) => {
                 </svg>
               </div>
             </li>
+            <li onClick={() => { toggleBDrawer('web') }}>
+              <div className='img-name'>
+                <img src="/logo-80-min.png" alt="" />
+                <div className="boost-text">
+                  <h4>Subscribe to Wellez</h4>
+                  <div>
+                    <span>You need to subscribe to Wellez</span>
+                  </div>
+                </div>
+              </div>
+              <div className='arrL'>
+                <div>+50</div>
+                <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1.5 1.5L6.5 6.5L1.5 11.5" stroke="#36EF82" strokeWidth="2" strokeLinecap="round" />
+                </svg>
+              </div>
+            </li>
           </ul>
         </div>
 
@@ -136,7 +154,7 @@ export const Quests = (props) => {
         <span className='BottomDrawer-des'>Bla bla bla, you need to subscribe to Twitter and you get <b>50 coins</b>.</span>
         <div>
 
-          {quests.twitter != 'completed' && <div className='UpgradeBtn'>
+          {quests?.twitter != 'completed' && <div className='UpgradeBtn'>
             <button onClick={() => { subscribe('twitter') }}>Subscribe</button>
           </div>}
         </div>
@@ -148,7 +166,7 @@ export const Quests = (props) => {
         <span className='BottomDrawer-des'>Bla bla bla, you need to subscribe to Discord and you get <b>50 coins</b>.</span>
         <div>
 
-          {quests.discord != 'completed' && <div className='UpgradeBtn'>
+          {quests?.discord != 'completed' && <div className='UpgradeBtn'>
             <button onClick={() => { subscribe('discord') }}>Subscribe</button>
           </div>}
         </div>
@@ -161,8 +179,21 @@ export const Quests = (props) => {
         <span className='BottomDrawer-des'>Bla bla bla, you need to subscribe to Telegram and you get <b>50 coins</b>.</span>
         <div>
 
-          {quests.telegram != 'completed' && <div className='UpgradeBtn'>
+          {quests?.telegram != 'completed' && <div className='UpgradeBtn'>
             <button onClick={() => { subscribe('telegram') }}>Subscribe</button>
+          </div>}
+        </div>
+      </BottomDrawer>
+
+
+      <BottomDrawer className="BottomDrawer" show={BDrawer.web} close={unShadow}>
+        <div className='emodji'>🧑‍🚀</div>
+        <div className='BottomDrawer-title'>Subscribe to Wellez</div>
+        <span className='BottomDrawer-des'>Bla bla bla, you need to subscribe to Wellez and you get <b>50 coins</b>.</span>
+        <div>
+
+          {quests?.web != 'completed' && <div className='UpgradeBtn'>
+            <button onClick={() => { subscribe('web') }}>Subscribe</button>
           </div>}
         </div>
       </BottomDrawer>
