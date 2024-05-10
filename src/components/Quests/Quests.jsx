@@ -10,6 +10,9 @@ export const Quests = (props) => {
   const api = import.meta.env.VITE_APP_API;
 
   // console.log(data);
+  setTimeout(function() {
+    document.getElementsByClassName('myfriends')[0].classList.add('opacity');
+  }, 100);
 
 
   const [shadow, setShadow] = useState(false);

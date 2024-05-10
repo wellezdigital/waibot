@@ -9,11 +9,14 @@ export const Friends = (props) => {
   const [buttonText, setButtonText] = useState('Copy referral link');
   const ref_link = `https://t.me/wai_coin_bot/app?startapp=${data.ref_link}`;
 
-  // data.friends = [...data.friends, ...data.friends].slice(0, 6)
+  // data.friends = [...data.friends, ...data.friends].slice(0, 2)
 
-  if (data.friends.length > 3) {
-    document.getElementsByClassName('myfriends')[0].classList.add('big_friends');
-  }
+  setTimeout(function() {
+    if (data.friends.length < 3) {
+      document.getElementsByClassName('myfriends')[0].classList.add('big_friends');
+    }
+    document.getElementsByClassName('myfriends')[0].classList.add('opacity');
+  }, 100);
 
   const copyRef = async () => {
     await navigator.clipboard.writeText(ref_link);

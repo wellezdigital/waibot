@@ -17,7 +17,7 @@
 
 .boost-balance {
   margin-top: 4vh;
-  font-size: small;
+  font-size: large;
   text-align: center;
 }
 
@@ -29,8 +29,14 @@
 }
 
 
-.Boost ul {
+.boost-ul {
   margin-top: 16vh;
+  transition: all .5s ease-out;
+  opacity: .1;
+}
+
+.opacity{
+  opacity: 1;
 }
 
 .Boost li {

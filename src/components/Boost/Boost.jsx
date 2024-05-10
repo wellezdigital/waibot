@@ -9,6 +9,10 @@ export const Boost = (props) => {
   const api = import.meta.env.VITE_APP_API;
   const start_price = 200;
 
+  setTimeout(function() {
+    document.getElementsByClassName('boost-ul')[0].classList.add('opacity');
+  }, 100);
+
   const [cm, setcm] = useState();
   const [cc, setcc] = useState();
   const [tr, settr] = useState();
@@ -84,7 +88,7 @@ export const Boost = (props) => {
           </div>
         </div>
 
-        <ul>
+        <ul className='boost-ul'>
           <li onClick={() => toggleBDrawer('cm')}>
             <img src="/coin-mul.webp" alt="" />
 

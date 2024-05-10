@@ -1,7 +1,9 @@
 .myfriends {
   position: absolute; 
-  top: 50%; 
-  transform: translateY(-100%);
+  top: 50vh; 
+  transform: translateY(-75%);
+  transition: all .5s ease-out;
+  opacity: .1;
   
   width: 90%;
 
@@ -9,13 +11,13 @@
   /* margin-top: 10vh; */
 }
 
-.big_friends{
-  transform: translateY(-72%);
-}
-
 .myfriends h1 {
   font-size: 20px;
   margin-bottom: 2vw;
+}
+
+.opacity{
+  opacity: 1;
 }
 
 .myfriends ul {

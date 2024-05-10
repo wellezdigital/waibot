@@ -28,7 +28,7 @@ function App() {
           username: user ? user.username : 'test name',
           ref: tg.initDataUnsafe.start_param ? tg.initDataUnsafe.start_param : null
         })
-        console.log(response.data);
+        // console.log(response.data);
         setData(response.data[0]);
       }
       catch (error) {
@@ -58,10 +58,10 @@ function App() {
     }
   ]);
 
-  // {user && (isMobile ? <RouterProvider router={router} /> : <div className='container'><p>No avalible on desktop</p></div>)}
   return (
     <>
-      <RouterProvider router={router} />
+    <RouterProvider router={router} />
+    {/* {user && (isMobile ? <RouterProvider router={router} /> : <div className='container'><p>No avalible on desktop</p></div>)} */}
     </>
   );
 }
