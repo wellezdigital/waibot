@@ -62,7 +62,7 @@ export const Layout = (props) => {
         {data && <Timer data={data} handleReady={handleReady} />}
       </div>
 
-      <Footer />
+      <Footer data={data} />
     </div>
   );
 };

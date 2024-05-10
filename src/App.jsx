@@ -11,9 +11,11 @@ import './App.css';
 
 function App() {
   const { tg, user } = useTelegram();
+  // console.log(tg, user);
 
   const api = import.meta.env.VITE_APP_API;
   const [data, setData] = useState(null);
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
   useEffect(() => {
     tg.ready();
@@ -22,7 +24,7 @@ function App() {
     const fetchData = async () => {
       try {
         const response = await axios.post(`${api}/start`, {
-          user_tg_id: user ? user.id : 123,
+          user_tg_id: user ? user.id : 471396145,
           username: user ? user.username : 'test name',
           ref: tg.initDataUnsafe.start_param ? tg.initDataUnsafe.start_param : null
         })
@@ -56,6 +58,7 @@ function App() {
     }
   ]);
 
+  // {user && (isMobile ? <RouterProvider router={router} /> : <div className='container'><p>No avalible on desktop</p></div>)}
   return (
     <>
       <RouterProvider router={router} />

@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
 import './Footer.css';
 
-export const Footer = () => {
-
+export const Footer = (props) => {
+  const { data } = props;
   const div = document.createElement('div');
 
   div.dataset.u = 'onwkN9aek8tHNC8O';
   div.lang = 'en';
-  // div.dataset.user_id = user ? user.id : 123;
+  div.dataset.user_id = data.user_tg_id;
   // div.dataset.amount = data ? data.avalible_coins - data.collected_coins : 100;
   div.dataset.coin = 'WAI';
   

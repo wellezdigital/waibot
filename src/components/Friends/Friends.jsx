@@ -1,18 +1,22 @@
 import { useState } from 'react';
 import { BackBtn } from '../BackBtn/BackBtn.jsx';
-import { useTelegram } from '../../hooks/useTelegram';
 
 
 import './Friends.css';
 
 export const Friends = (props) => {
   const { data } = props;
-  const { tg } = useTelegram();
-
   const [buttonText, setButtonText] = useState('Copy referral link');
+  const ref_link = `https://t.me/wai_coin_bot/app?startapp=${data.ref_link}`;
+
+  // data.friends = [...data.friends, ...data.friends].slice(0, 6)
+
+  if (data.friends.length > 3) {
+    document.getElementsByClassName('myfriends')[0].classList.add('big_friends');
+  }
 
   const copyRef = async () => {
-    await navigator.clipboard.writeText(`https://t.me/wai_coin_bot/app?startapp=${data.ref_link}`);
+    await navigator.clipboard.writeText(ref_link);
 
     setButtonText('Copied!');
     setTimeout(() => {
@@ -21,10 +25,7 @@ export const Friends = (props) => {
   }
 
   const shareRef = () => {
-    console.log('share');
-    console.log(tg);
-
-    tg.openTelegramLink(`t.me/wai_coin_bot/app?startapp=${data.ref_link}`)
+    window.location.href = `https://t.me/share/url?url=${ref_link}&text=welcome`;
   }
 
   return (
