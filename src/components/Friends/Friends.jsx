@@ -27,8 +27,10 @@ export const Friends = (props) => {
     }, 3000);
   }
 
+  let share_text = `Your friend shared the link with you! 🌟 Welcome to our cozy app, where technology connects. Start mining tokens right now.`;
+
   const shareRef = () => {
-    window.location.href = `https://t.me/share/url?url=${ref_link}&text=welcome`;
+    window.location.href = `https://t.me/share/url?url=${ref_link}&text=${share_text}`;
   }
 
   return (
